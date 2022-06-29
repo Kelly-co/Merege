@@ -4,16 +4,33 @@ import { useForm } from "react-hook-form";
 // import { useNavigate } from "react-router-dom";
 import "./Form.css";
 
+const staff = { Munich: ["Jan"], Aveiro: ["José"] };
+
+const defaultValues = {
+  branches: Object.keys(staff)[0],
+};
+
 const Form = () => {
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm();
+  } = useForm({ defaultValues });
   const onSubmit = (data) => console.log(data);
 
-  console.log(watch("example")); // watch input value by passing the name of it
+  const activeBranch = watch("branches");
+
+  const branches = Object.keys(staff).map((el) => (
+    <option value={el}>{el}</option>
+  ));
+
+  const collaborators = activeBranch
+    ? staff[activeBranch].map((el) => <option value={el}>{el}</option>)
+    : [];
+
+  console.log("collaborators", collaborators);
+  console.log("activeBranch", activeBranch);
 
   return (
     /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
@@ -45,6 +62,10 @@ const Form = () => {
       />
       {errors.keys && <span>This field is required</span>}
       <br />
+      <select {...register("branches", { required: true })}>{branches}</select>
+      <select {...register("collaborators", { required: true })}>
+        {collaborators}
+      </select>
       <label>Description:</label>
       <br />
       <input
