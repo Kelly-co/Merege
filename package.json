@@ -1,38 +1,24 @@
 {
-  "name": "merege",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "merege",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "concurrently \"npm --prefix ./client run dev\"",
+        "start": "concurrently \"npm --prefix ./client run dev\" \"npm --prefix ./server run dev\"",
+        "dev-front": "npm --prefix ./client run dev",
+        "dev-back": "npm --prefix ./server run dev",
+        "fix": "npm --prefix ./client run fix && npm --prefix ./server run fix"
+    },
+    "keywords": [],
+    "author": "Wild Code School",
+    "license": "ISC",
+    "devDependencies": {
+        "concurrently": "^7.2.2"
+    },
+    "dependencies": {
+        "@material/layout-grid": "^14.0.0",
+        "moment": "^2.29.3",
+        "react-icons": "^4.4.0"
+    }
 }
