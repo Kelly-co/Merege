@@ -19,6 +19,8 @@
     "dependencies": {
         "@material/layout-grid": "^14.0.0",
         "moment": "^2.29.3",
-        "react-icons": "^4.4.0"
+        "nodemon": "^2.0.18",
+        "react-icons": "^4.4.0",
+        "react-scripts": "^5.0.1"
     }
 }
