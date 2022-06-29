@@ -48,7 +48,7 @@ CREATE TABLE `projects` (
 --     'Deine Investments gehen zu 100% in nachhaltige Aktien. Was das genau bedeutet erfährst du hier.'
 --   );
   
-CREATE TABLE `projects-users` (
+CREATE TABLE `projects_users` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `user_id` INT NOT NULL,
     `project_id` INT NOT NULL,
