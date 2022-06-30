@@ -35,3 +35,26 @@ export const Logo = () => {
 
     )
 }
+
+export const ProjectImg = () => {
+    return(
+        <svg width="1440" height="246" viewBox="0 0 1440 246" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.5" filter="url(#filter0_d_34_498)">
+<rect width="1440" height="238" fill="#0F2334"/>
+</g>
+<defs>
+<filter id="filter0_d_34_498" x="-4" y="0" width="1448" height="246" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_34_498"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_34_498" result="shape"/>
+</filter>
+</defs>
+</svg>
+
+    )
+}
