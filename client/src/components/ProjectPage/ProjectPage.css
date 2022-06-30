@@ -1,4 +1,19 @@
 .project-page {
-    display: grid;
-    grid-template-rows: 1fr 2fr;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.bg-img {
+   
+}
+
+.project-info {
+    position: absolute;
+width: 1440px;
+height: 611px;
+left: 0px;
+top: 339px;
+
+background: #0F2334;
 }

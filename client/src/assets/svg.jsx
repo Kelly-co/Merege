@@ -36,8 +36,3 @@ export const Logo = () => {
     )
 }
 
-export const ProjectImg = () => {
-    return(
-        
-    )
-}
