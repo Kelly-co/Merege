@@ -15,6 +15,10 @@ function Main() {
         <Route path="/" element={<Login />} />
         <Route path="/form" element={<Form />} />
         <Route path="/" element={<Layout />}>
+<<<<<<< HEAD
+=======
+          <Route path="/form" element={<Form />} />
+>>>>>>> dashboard
           <Route path="/dashboard" element={<ProjectList />} />
           <Route path="/project-page" element={<ProjectPage />} />
         </Route>
