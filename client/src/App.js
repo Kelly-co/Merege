@@ -1,18 +1,21 @@
-import "./App.css";
-import { useEffect } from "react";
-import Login from "./components/Login/Login";
+import React from "react";
+import { BrowserRouter as Router} from "react-router-dom";
+import ProjectsContextProvider from "./contexts/ProjectsContext";
+import Main from "./components/Main";
+
 
 function App() {
-  useEffect(() => {
-    fetch("/projects").then((res) => {
-      if (res.ok) {
-        return res.json().then((data) => {
-          console.log(data);
-        });
-      }
-    });
-  }, []);
-  return <div className="App"><Login /></div>;
+
+
+  return (
+    <div className="App">
+      <ProjectsContextProvider>
+        <Router>
+          <Main/>
+        </Router>
+      </ProjectsContextProvider>
+    </div >
+  );
 }
 
 export default App;
