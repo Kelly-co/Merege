@@ -4,8 +4,6 @@ import ProjectsContextProvider from "./contexts/ProjectsContext";
 import Main from "./components/Main";
 import NavBar from "./components/NavBar/NavBar";
 
-
-
 function App() {
   return (
     <div className="App">
@@ -13,7 +11,6 @@ function App() {
         <Router>
           <NavBar />
           <Main />
-          
         </Router>
       </ProjectsContextProvider>
     </div>
