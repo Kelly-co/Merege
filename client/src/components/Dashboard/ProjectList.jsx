@@ -9,11 +9,14 @@ const ProjectList = () => {
   console.log(projects);
   const [projectsSearch, setProjectsSearch] = useState(projects);
 
-  useEffect(() => {
     allkeyfunction()
 
-  }, []);
-
+  function allkeyfunction() {
+    projects.map((project) => {
+     return Object.assign(project, { "keyword": [project.key1 ,project.key2, project.key3],"languages": [project.language1 ,project.language2, project.language3]}) 
+     })
+     console.log(projects)
+  }
   
   
   const handleSearch = (e) => {
@@ -23,21 +26,21 @@ const ProjectList = () => {
       setProjectsSearch(projects);
     } else{
     const searchProject = projects.filter(project => {
-        if ((project.name.toLowerCase()).includes(query.toLowerCase())) {
+        if ((project.name.toLowerCase()).startsWith(query.toLowerCase())) {
             return true;
         }
-        if ((project.subject.toLowerCase()).includes(query.toLowerCase())) {
+        if ((project.subject.toLowerCase()).startsWith(query.toLowerCase())) {
             return true;
         }
-        if ((project.branch.toLowerCase()).includes(query.toLowerCase())) {
+        if ((project.branch.toLowerCase()).startsWith(query.toLowerCase())) {
           return true;
         }  
         for(let i=0; i<project.languages.length;i++){
-        if ((project.languages[i].toLowerCase()).includes(query.toLowerCase())){
+        if ((project.languages[i].toLowerCase()).startsWith(query.toLowerCase())){
           return true
         }}
         for(let i=0; i<project.keyword.length;i++){
-          if ((project.keyword[i].toLowerCase()).includes(query.toLowerCase())){
+          if ((project.keyword[i].toLowerCase()).startsWith(query.toLowerCase())){
             return true
         }}
     });
@@ -80,13 +83,7 @@ const ProjectList = () => {
       <ProjectCard {...element} />
     </div>
   ));
-  let allkey = [];
-  function allkeyfunction() {
-    projects.map((project) => {
-     return Object.assign(project, { "keyword": [project.key1 ,project.key2, project.key3],"languages": [project.language1 ,project.language2, project.language3]}) 
-     })
-    
-  }
+
 
 
 
