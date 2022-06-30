@@ -10,10 +10,9 @@ function Main() {
   return (
     <div className="main">
       <Routes>
-      <Route path="/" element={<Homepage />} />
-          <Route path="/form" element={<Form />} />
+        <Route path="/" element={<Homepage />} />
+        <Route path="/form" element={<Form />} />
         <Route path="/" element={<Layout />}>
-          <Route path="/form" element={<Form />} />
           <Route path="/project" element={<ProjectList />} />
           <Route path="/project-page" element={<ProjectPage />} />
         </Route>

@@ -1,0 +1,53 @@
+.homepage {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.homepage-logo {
+  width: 150px;
+  position: relative;
+  top: 30px;
+}
+
+.homepage-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+}
+
+.lock-icon {
+  position: absolute;
+  left: 46%;
+  bottom: 60%;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  border-radius: 40px;
+  padding: 110px;
+  background-color: #d9d9d9;
+}
+
+.form-login-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-input {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.btn-login {
+  background-color: #0f2334;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+}

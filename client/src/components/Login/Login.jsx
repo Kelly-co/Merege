@@ -35,11 +35,11 @@ const Login = () => {
   return (
     <div className="login container">
       <div className="login-header">
-        <h1>Welcome to Merege!</h1>
-        <form onSubmit={handleSubmit} className="form" noValidate>
-          <div>
+        <form onSubmit={handleSubmit} className="form-login" noValidate>
+          <div className="form-login-container">
             <label htmlFor="email"></label>
             <input
+              className="login-input"
               name="email"
               id="email"
               type="email"
@@ -47,28 +47,26 @@ const Login = () => {
               placeholder="Email"
               onChange={handleChange}
             />
-            <br />
+
             <div className="show-hide-password">
               <label htmlFor="password"></label>
               <input
+                className="login-input"
                 name="password"
                 id="password"
                 value={userLogin.password}
-                placeholder="Passwort"
+                placeholder="Password"
                 onChange={handleChange}
-                className="password"
               />
-              <br />
             </div>
+            <button className="btn-login" type="submit">
+              Login
+            </button>
           </div>
-
-          <button type="submit" className="button">
-            Login
-          </button>
         </form>
       </div>
 
-      <div className="btn-password-registration"></div>
+      {/* <div className="btn-password-registration"></div> */}
     </div>
   );
 };
