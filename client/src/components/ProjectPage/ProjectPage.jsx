@@ -1,18 +1,12 @@
-import "./ProjectPage.css";
-import React from "react";
-import ProjectImg from "../../assets/images/LyonFilter.png";
+import React,{useContext} from 'react';
+import { ProjectsContext } from '../../contexts/ProjectsContext';
 
 
 const ProjectPage = () => {
-  return (
-    <div className="project-page">
-      <div style={{ backgroundImage: `url(${ProjectImg})`, backgroundRepeat: "no-repeat", backgroundSize:"cover" }}>
-        
-      </div>
-      <div>
-        
-      </div>
-    </div>
+  const { projectSelect,  setProjectSelect } = useContext(ProjectsContext);
+  console.log(projectSelect)
+  return(
+  <div></div>
   )
 };
 

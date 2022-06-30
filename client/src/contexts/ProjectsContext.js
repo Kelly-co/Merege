@@ -8,6 +8,7 @@ export const ProjectsContext = React.createContext(null);
 export default function ProjectsContextProvider(props) {
   const [projects, setProjects] = React.useState();
   const [loading, setLoading] = React.useState(false);
+  const [projectSelect, setProjectSelect] = React.useState();
 
 
   useEffect(() => {
@@ -34,7 +35,9 @@ export default function ProjectsContextProvider(props) {
         projects, 
         setProjects,
         loading,
-        setLoading
+        setLoading,
+        projectSelect, 
+        setProjectSelect
       }}
     >
       {props.children}
