@@ -34,6 +34,8 @@ CREATE TABLE `projects` (
     `description` VARCHAR(255) NOT NULL,
     `start_date` DATE NOT NULL,
     `end_date` DATE NOT NULL,
+    `trelloLink` VARCHAR(255) NOT NULL,
+    `githubLink` VARCHAR(255) NOT NULL,
     PRIMARY KEY (`id`)
   ) ENGINE = InnoDB AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8;
 
