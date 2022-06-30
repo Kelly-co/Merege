@@ -12,12 +12,10 @@ h1 {
   font-size: 30px;
   text-align: center;
 }
-<<<<<<< HEAD
 .App {
   font-family: "Roboto", sans-serif;
   height: 100vh;
-=======
-
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -55,5 +53,4 @@ h1 {
   to {
     transform: rotate(360deg);
   }
->>>>>>> dashboard
 }
