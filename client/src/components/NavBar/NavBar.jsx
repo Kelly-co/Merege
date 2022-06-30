@@ -1,18 +1,18 @@
 import React from "react";
 import "./NavBar.css"
 import { Link } from "react-router-dom";
-
+import {Logo} from "../../assets/svg";
 
 
 //create navbar component
 const NavBar = () => {
     return (
         <div className="navbar-container">
-            <div>
-                <Link to="/"><div className='logo'>LOGO{/*<Logo />*/}</div></Link>
+            <div className="logo">
+                <div className='logo'><Logo /></div>
             </div>
-            <div>
-                <button>
+            <div className="about">
+                <button className="button">
                     <Link to="/about">About</Link>
                 </button>
             </div>

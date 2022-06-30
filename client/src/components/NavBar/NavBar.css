@@ -2,4 +2,22 @@
     display: grid;
     justify-content: space-between;
     grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+    background-color: #0F2334;
+}
+
+.logo {
+    justify-self: start;
+}
+
+.about {
+    justify-self: end;
+    align-self: center;
+    border-radius: 5px;
+}
+
+.button {
+    width: 5rem;
+    height: 3rem;
+    border-radius: 5px;
 }
