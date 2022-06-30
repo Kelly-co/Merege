@@ -1,5 +1,85 @@
-form {
-  padding: 1rem;
+.form {
+  display: flex;
+  justify-content: center;
+  background-position: center center;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-form {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  width: 50vw;
+}
+
+h1 {
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.form-titles {
+  color: #ffffff;
+  font-size: 15px;
+  padding-right: 0.3rem;
+  padding-left: 0.3rem;
+}
+
+input {
+  background-color: #e7f4f2;
+}
+
+.form-field {
+  padding: 0.5rem 0.3rem 0.5rem 0.3rem;
+  border-radius: 0 0 23px 0;
+  border: 1px solid;
+}
+
+.form-field-description {
+  padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+  border-radius: 0 0 23px 0;
+  border: 1px solid;
+}
+
+.search-wrapper {
+  padding: 0.5rem 0.3rem 0.5rem 0.3rem;
+  border-radius: 0 0 23px 0;
+  border: 1px solid;
+  background-color: #e7f4f2;
+}
+
+.form-date {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.2rem;
+}
+
+.form-links {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.2rem;
+}
+
+.form-field-link {
+  width: 100%;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  border-radius: 0 0 23px 0;
+  border: 1px solid;
+}
+
+.btn-form {
+  background-color: #e7f4f2;
+  color: grey;
+  border-radius: 23px;
+  border: 1px solid;
+  width: 30%;
+  padding: 0.5rem;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.btn-form-container {
+  display: flex;
+  justify-content: center;
 }
