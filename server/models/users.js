@@ -1,7 +1,7 @@
-// const Joi = require("joi");
-// const connection = require("../config");
-// const db = connection.promise();
-// const bcrypt = require("bcrypt");
+ const Joi = require("joi");
+ const connection = require("../config");
+ const db = connection.promise();
+ const bcrypt = require("bcrypt");
 
 // const validate = (data, forCreation = true) => {
 //     const presence = forCreation ? "required" : "optional";
@@ -15,12 +15,12 @@
 //     }).validate(data, { abortEarly: false }).error;
 // };
 
-// const findByEmail = (email) => {
+ const findByEmail = (email) => {
 
-//     return db
-//         .query("SELECT * FROM users WHERE email = ?", [email])
-//         .then(([results]) => results[0]);
-// };
+     return db
+         .query("SELECT * FROM users WHERE email = ?", [email])
+         .then(([results]) => results[0]);
+ };
 
 // const findMany = () => {
 //     let sql = "SELECT id, name, email FROM users";
@@ -71,10 +71,10 @@
 //         .then(([result]) => result.affectedRows !== 0);
 // };
 
-// const verifyPassword = async (plainPassword, hashedPassword) => {
-//     console.log(bcrypt.compareSync(plainPassword,hashedPassword))
-//     return bcrypt.compareSync(plainPassword,hashedPassword);
-// };
+ const verifyPassword = async (plainPassword, hashedPassword) => {
+     console.log(bcrypt.compareSync(plainPassword,hashedPassword))
+     return bcrypt.compareSync(plainPassword,hashedPassword);
+ };
 
 // const changePassword = (newPassword, userId) => {
 //     return bcrypt.hash(newPassword, 10).then((hash) => {
@@ -85,15 +85,15 @@
 //     });
 //   };
 
-// module.exports = {
+ module.exports = {
 //     findMany,
 //     findOne,
 //     validate,
 //     create,
 //     update,
 //     destroy,
-//     findByEmail,
+     findByEmail,
 //     findByEmailWithDifferentId,
-//     verifyPassword,
+     verifyPassword,
 //     changePassword
-// }
+ }

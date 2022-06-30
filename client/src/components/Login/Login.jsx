@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 const login = () => {
+  
   return <div></div>;
 };
 
 export default login;
 
-// import React, { useState, useEffect, useContext } from 'react'
-// import '../../../../styles/styles.scss';
-// import './Login.scss';
+
 // import axios from 'axios';
 // import { Link, useLocation, useNavigate } from 'react-router-dom';
 // import Joi from 'joi-browser';
@@ -21,12 +20,7 @@ export default login;
 //     // const [credentials, setCredentials] = useState({})
 //     const { setAuth, setUser, setLoading } = useContext(AuthContext);
 
-//     const [userLogin, setUserLogin] = useState(
-//         {
-//             email: '',
-//             password: '',
-//         }
-//     )
+     
 
 //     const location = useLocation();
 //     const navigate = useNavigate();
