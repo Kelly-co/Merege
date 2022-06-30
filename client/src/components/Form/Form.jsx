@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 import Multiselect from "multiselect-react-dropdown";
 import { staff } from "./Data";
 import backgroundImage from "../../assets/images/background.png";
@@ -14,6 +15,14 @@ const Form = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
+
+  const handleSubmission = () => {
+    axios.post("projects/insert", {}).then((response) => {
+      console.log(response);
+    });
+  };
+
+  console.log("object ", register);
 
   return (
     <div
@@ -112,7 +121,9 @@ const Form = () => {
           />
         </div>
         <div className="btn-form-container">
-          <button className="btn-form">Submit</button>
+          <button className="btn-form" onClick={handleSubmission}>
+            Submit
+          </button>
         </div>
       </form>
     </div>
