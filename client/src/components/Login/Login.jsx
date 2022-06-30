@@ -1,13 +1,77 @@
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
+import { useState } from "react";
+import axios from "axios";
+//import { useNavigate } from "react-router-dom";
 
-const login = () => {
-  
-  return <div></div>;
+const Login = () => {
+  const [userLogin, setUserLogin] = useState({
+    email: "",
+    password: "",
+  });
+  const [user, setUser] = useState({});
+  const [auth, setAuth] = useState(false);
+
+  let handleChange = (e) => {
+    e.preventDefault();
+    const value = e.target.value;
+    const name = e.target.name;
+    setUserLogin({ ...userLogin, [name]: value });
+  };
+
+  let handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios.post("/auth/login", userLogin).then((response) => {
+      setUser(response.data);
+      setAuth(true);
+    });
+  };
+
+  return (
+    <div className="login container">
+      <div className="login-header">
+        <h1>Welcome to Merege!</h1>
+        <form onSubmit={handleSubmit} className="form" noValidate>
+          <div>
+            <label htmlFor="email"></label>
+            <input
+              name="email"
+              id="email"
+              type="email"
+              value={userLogin.email}
+              placeholder="Email"
+              onChange={handleChange}
+            />
+            <br />
+            <div className="show-hide-password">
+              <label htmlFor="password"></label>
+              <input
+                name="password"
+                id="password"
+                value={userLogin.password}
+                placeholder="Passwort"
+                onChange={handleChange}
+                className="password"
+              />
+              <br />
+            </div>
+          </div>
+
+          <button type="submit" className="button">
+            Login
+          </button>
+        </form>
+      </div>
+
+      <div className="btn-password-registration"></div>
+    </div>
+  );
 };
 
-export default login;
+export default Login;
 
-
+// import '../../../../styles/styles.scss';
+// import './Login.scss';
 // import axios from 'axios';
 // import { Link, useLocation, useNavigate } from 'react-router-dom';
 // import Joi from 'joi-browser';
@@ -18,9 +82,7 @@ export default login;
 // function Login() {
 
 //     // const [credentials, setCredentials] = useState({})
-//     const { setAuth, setUser, setLoading } = useContext(AuthContext);
-
-     
+// const { setAuth, setUser, setLoading } = useContext(AuthContext);
 
 //     const location = useLocation();
 //     const navigate = useNavigate();
@@ -108,39 +170,6 @@ export default login;
 //                     break
 //                 }
 //             }
-//         }
-//     }
-
-//     let handleChange = (e) => {
-//         e.preventDefault();
-//         const value = e.target.value
-//         const name = e.target.name
-//         setUserLogin({ ...userLogin, [name]: value })
-//     }
-
-//     let handleSubmit = (e) => {
-//         e.preventDefault();
-//         validate()
-//         setShowErrorPassword(true)
-//         setShowErrorEmail(true)
-
-//         if (errors.length === 0) {
-//             axios.post('/auth/anmeldung', userLogin)
-//                 .then((response) => {
-//                     setUser(response.data)
-//                     setAuth(true)
-//                     setLoading(true)
-//                     navigate('/uberblick');
-
-//                 })
-//                 .catch((error) => {
-//                     if (error.response.status === 401) {
-//                         setDisplayErrorsEmail("Email wurde nicht gefunden")
-//                     }
-//                     else if (error.response.status === 403) {
-//                         setDisplayErrorsPassword("Das eingegebene Passwort ist falsch")
-//                     }
-//                 })
 //         }
 //     }
 

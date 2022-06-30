@@ -1,5 +1,6 @@
 import "./App.css";
 import { useEffect } from "react";
+import Login from "./components/Login/Login";
 
 function App() {
   useEffect(() => {
@@ -11,7 +12,7 @@ function App() {
       }
     });
   }, []);
-  return <div className="App"></div>;
+  return <div className="App"><Login /></div>;
 }
 
 export default App;

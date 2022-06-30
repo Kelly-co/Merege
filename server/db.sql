@@ -11,15 +11,16 @@ CREATE TABLE `users` (
     PRIMARY KEY (`id`)
   ) ENGINE = InnoDB AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8;
 
--- INSERT INTO
---   `users`
--- VALUES
---   (
---     1,
---     'Alexandre',
---     'alexandre@mail.com',
---     ''
---   );
+  -- INSERT INTO
+  --   `users`
+  -- VALUES
+  --   (
+  --     '2',
+  --     'Tiago',
+  --     'tiago@mail.com',
+  --    '$2a$12$i2tXhhiTdKPVpjZ5Bip7FO5ys8Yv2kKjHbYlTc1g6RMSc0.T5VA6e',
+  --     'Munich'
+  --   );
 
 CREATE TABLE `projects` (
     `id` INT NOT NULL AUTO_INCREMENT,

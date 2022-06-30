@@ -1,8 +1,9 @@
 const express = require("express");
 const app = express();
 const connection = require("./config");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 const projectsRouter = require("./routes/projects");
+const authRouter = require("./routes/auth");
 
 connection.connect((err) => {
   if (err) throw err;
@@ -11,6 +12,7 @@ connection.connect((err) => {
 
 app.use(express.json());
 
+app.use("/auth", authRouter);
 app.use(projectsRouter);
 
 app.get("/", (req, res) => {
