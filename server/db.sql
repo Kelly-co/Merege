@@ -38,14 +38,21 @@ CREATE TABLE `projects` (
   ) ENGINE = InnoDB AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8;
 
 -- INSERT INTO
---   `portfolio`
+--   `projects`
 -- VALUES
 --   (
 --     1,
---     'push',
---     '7.31',
---     '100% Aktien',
---     'Deine Investments gehen zu 100% in nachhaltige Aktien. Was das genau bedeutet erfährst du hier.'
+--     'merege',
+--     'all projects in one database',
+--     'github',
+--     'gitlab',
+--     'bitbucket',
+--     'javascript',
+--     'php',
+--     'python',
+--     'our first project',
+--     '2018-01-01',
+--     '2018-03-01'
 --   );
   
 CREATE TABLE `projects_users` (
