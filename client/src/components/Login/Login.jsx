@@ -1,15 +1,19 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
 //import { useNavigate } from "react-router-dom";
+import ProjectsContext from "../../contexts/ProjectsContext.js";
 
 const Login = () => {
   const [userLogin, setUserLogin] = useState({
     email: "",
     password: "",
   });
-  const [user, setUser] = useState({});
-  const [auth, setAuth] = useState(false);
+
+  const user = useContext(ProjectsContext);
+  const auth = useContext(ProjectsContext);
+  const setUser = useContext(ProjectsContext);
+  const setAuth = useContext(ProjectsContext);
 
   let handleChange = (e) => {
     e.preventDefault();
@@ -26,6 +30,7 @@ const Login = () => {
       setAuth(true);
     });
   };
+  console.log(user, auth);
 
   return (
     <div className="login container">

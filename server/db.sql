@@ -11,16 +11,80 @@ CREATE TABLE `users` (
     PRIMARY KEY (`id`)
   ) ENGINE = InnoDB AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8;
 
-  -- INSERT INTO
-  --   `users`
-  -- VALUES
-  --   (
-  --     '2',
-  --     'Tiago',
-  --     'tiago@mail.com',
-  --    '$2a$12$i2tXhhiTdKPVpjZ5Bip7FO5ys8Yv2kKjHbYlTc1g6RMSc0.T5VA6e',
-  --     'Munich'
-  --   );
+  INSERT INTO
+    `users`
+  VALUES
+    (
+      '1',
+      'Juan',
+      'juan@mail.com',
+     '$2a$12$60RmVTEvhdaSTkP5U1trpusNoTGEyjeihC.KHgCx08Dem/9gbwcfK',
+      'Lyon'
+    ),
+    (
+      '2',
+      'Tiago',
+      'tiago@mail.com',
+     '$2a$12$i2tXhhiTdKPVpjZ5Bip7FO5ys8Yv2kKjHbYlTc1g6RMSc0.T5VA6e',
+      'Munich'
+    ),
+    (
+      '3',
+      'João',
+      'joao@mail.com',
+      '$2a$12$R75rlRXJd2fwlN4lW4deFuVyMMCs5hKA6CvN7ihkWjJKIdnljQyzK',
+      'Nice'
+      ),
+      (
+      '4',
+      'Maria',
+      'maria@mail.com',
+      '$2a$12$7PttesrVincY0khc.KPEYettkg9FiQW5DqnCFWUj6SJ9YSv4PQlKC',
+      'Paris'
+      ),
+      (
+      '5',
+      'Patricia',
+      'patricia@mail.com',
+      '$2a$12$ME9nzaQ5yLV6ymrh0mRvl.0MeBs7vkXwlq3w6dM3ziEuSpFmNzXYu',
+      'London'
+      ),
+      (
+      '6',
+      'Melly',
+      'melly@mail.com',
+      '$2a$12$gKzsziGSIHDHBug95KLK1OWsDgXA3JZ2EVKVAiLy8/IkVsK.g4cpm',
+      'Paris'
+      ),
+      (
+      '7',
+      'Lourenço',
+      'lourenco@mail.com',
+      '$2a$12$6dH9BOHrjjbBKFv.ByWy2eY3w1FWwtY2mf0AGd/NjJzijk70GCP.a',
+      'Paris'
+      ),
+      (
+      '8',
+      'Francisco',
+      'chico@mail.com',
+      '$2a$12$ff4YDknKvWFNeCalpX32weDdv0E50JPKckHQiuo8sRn7b3Bgqvi7K',
+      'Paris'
+      ),
+      (
+      '9',
+      'Nuno',
+      'nuno@mail.com',
+      '$2a$12$t8Yl0TP8InPHKTAIddXkBOWKgggOtas5q8k/XN6hG9AcomK0I0TO.',
+      'Paris'
+      ),
+      (
+      '10',
+      'Alex',
+      'alex@mail.com',
+      '$2a$12$eLvc/qKLUn0qTiqwz4x0tef33P4aJdl2.YslGV3SORtTW.xvsZxk.',
+      'Lyon'
+      );
+
 
 CREATE TABLE `projects` (
     `id` INT NOT NULL AUTO_INCREMENT,
