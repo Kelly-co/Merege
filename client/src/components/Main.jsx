@@ -4,6 +4,7 @@ import Layout from "./Layout";
 import ProjectList from "../components/Dashboard/ProjectList";
 import Homepage from "./Homepage/Homepage";
 import Form from "../components/Form/Form";
+import ProjectPage from "./ProjectPage/ProjectPage";
 
 function Main() {
   return (
@@ -14,6 +15,7 @@ function Main() {
         <Route path="/" element={<Layout />}>
           <Route path="/form" element={<Form />} />
           <Route path="/project" element={<ProjectList />} />
+          <Route path="/project-page" element={<ProjectPage />} />
         </Route>
       </Routes>
     </div>

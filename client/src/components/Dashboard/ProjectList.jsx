@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { ProjectsContext } from "../../contexts/ProjectsContext";
 import ProjectCard from "./ProjectCard";
+import "./Project.css";
 
 const ProjectList = () => {
   const { projects, setProjects } = useContext(ProjectsContext);
@@ -84,30 +85,34 @@ const ProjectList = () => {
 
   let inoption=[]
     return(
-      <div className="search">
-        <input type="search"
-          name="search-form"
-          id="search-form"
-          placeholder="Type a beach..."
-          onChange={handleSearch}
-        />
+      <div className="dashboard">
+        <div className="search">
+          <input type="search"
+            name="search-form"
+            id="search-form"
+            placeholder="Type a beach..."
+            onChange={handleSearch}
+          />
       <div>
-        <select className="select-css" id="search-form" onChange={handleFilterKeyword}>
-          <option>All beaches</option>
-        { projects.map((project) => (
-          project.keyword.map(element=>{if(inoption.includes(element)===false){
-            inoption.push(element);
-            return (<option>{element}</option>)}}))
-        )}
-      </select>
-      </div>
-      <div>
-        <select className="select-css" onChange={handleFilterBranch}>
-          <option>branch</option>
-          {([...new Map(projects.map(item => [item.branch, item])).values()]).map(element=>(<option>{element.branch}</option>))}
+        <div>
+          <select className="select-css" id="search-form" onChange={handleFilterKeyword}>
+            <option>All beaches</option>
+          { projects.map((project) => (
+            project.keyword.map(element=>{if(inoption.includes(element)===false){
+              inoption.push(element);
+              return (<option>{element}</option>)}}))
+          )}
         </select>
+        </div>
+        <div>
+          <select className="select-css" onChange={handleFilterBranch}>
+            <option>branch</option>
+            {([...new Map(projects.map(item => [item.branch, item])).values()]).map(element=>(<option>{element.branch}</option>))}
+          </select>
+        </div>
       </div>
         <div>{display}</div>
+      </div>
       </div>
     )
 };
