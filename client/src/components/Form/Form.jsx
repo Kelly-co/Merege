@@ -18,7 +18,11 @@ const Form = () => {
   return (
     <div
       className=" form"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
     >
       <form
         className="projects-form container"
