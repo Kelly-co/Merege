@@ -1,1 +1,18 @@
+<<<<<<< HEAD
 node_modules/
+=======
+<<<<<<< HEAD
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules/
+.env
+
+
+# misc
+.DS_Store
+
+=======
+/node_modules
+>>>>>>> f9581b21264be05bcd2e25af499481e205ac39e6
+>>>>>>> login
