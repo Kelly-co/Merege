@@ -55,7 +55,7 @@ function ProjectCard(props){
 
 
     return(
-        <div className='card'onClick={selectProject}>
+        <div  className='cardComponent'onClick={selectProject}>
           <div className='projectName'>
             <h2>{name}</h2>
           </div>
@@ -63,9 +63,7 @@ function ProjectCard(props){
             <h2>{branch}</h2>
           </div>
           <div className='progress'>
-            <div>
               <ProgressBar completed={progress}/>
-            </div>
           </div>
         </div>
     )

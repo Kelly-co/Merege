@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState,useEffect } from "react";
 import { ProjectsContext } from "../../contexts/ProjectsContext";
 import ProjectCard from "./ProjectCard";
 import "./Project.css";
@@ -9,7 +9,12 @@ const ProjectList = () => {
   console.log(projects)
   const [projectsSearch, setProjectsSearch] = useState(projects);
 
+  useEffect(() => {
+    allkeyfunction()
 
+  }, []);
+
+  
   
   const handleSearch = (e) => {
 
@@ -19,6 +24,7 @@ const ProjectList = () => {
       setProjectsSearch(projects);
     } else{
     const searchProject = projects.filter(project => {
+      console.log(project)
         if ((project.name.toLowerCase()).includes(query.toLowerCase())) {
             return true;
         }
@@ -42,7 +48,7 @@ const ProjectList = () => {
   
   const handleFilterKeyword=(e)=>{
     const query = e.target.value
-    if(e.target.value==="All beaches"){
+    if(e.target.value==="keyword"){
       setProjectsSearch(projects);
     } else{
     const searchProject = projects.filter(project => {
@@ -58,7 +64,7 @@ const ProjectList = () => {
   const handleFilterBranch=(e)=>{
     const query = e.target.value
     console.log(e.target.value)
-    if(e.target.value==="All beaches"){
+    if(e.target.value==="branch"){
       setProjectsSearch(projects);
     } else{
     const searchProject = projects.filter(project => {
@@ -74,13 +80,13 @@ const ProjectList = () => {
   let allkey=[]
   function allkeyfunction() {
     projects.map((project) => {
-     return Object.assign(project, { "keyword": [project.key1 ,project.key2, project.key3]}) 
+     return Object.assign(project, { "keyword": [project.key1 ,project.key2, project.key3],"languages": [project.language1 ,project.language2, project.language3]}) 
      })
     
   }
 
 
-  allkeyfunction()
+
   console.log(projects)
 
   let inoption=[]
@@ -90,13 +96,13 @@ const ProjectList = () => {
           <input type="search"
             name="search-form"
             id="search-form"
-            placeholder="Type a beach..."
+            placeholder="Search Projects"
             onChange={handleSearch}
           />
-      <div>
+        </div>
         <div>
           <select className="select-css" id="search-form" onChange={handleFilterKeyword}>
-            <option>All beaches</option>
+            <option>keyword</option>
           { projects.map((project) => (
             project.keyword.map(element=>{if(inoption.includes(element)===false){
               inoption.push(element);
@@ -110,10 +116,16 @@ const ProjectList = () => {
             {([...new Map(projects.map(item => [item.branch, item])).values()]).map(element=>(<option>{element.branch}</option>))}
           </select>
         </div>
+        <div>
+          <div  className='card'>
+            <div>Project List</div>
+            <div>Branch</div>
+            <div>Progress</div>
+          </div>
+          <div>{display}</div>
+        </div>
       </div>
-        <div>{display}</div>
-      </div>
-      </div>
+
     )
 };
 
