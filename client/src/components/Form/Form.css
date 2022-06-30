@@ -78,6 +78,10 @@ input {
   font-size: 17px;
   font-weight: 500;
 }
+.btn-form:hover {
+  background-color: #0e202f;
+  color: #ffffff;
+}
 
 .btn-form-container {
   display: flex;
