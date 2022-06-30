@@ -1,7 +1,13 @@
-import React from "react";
+import React,{useContext} from 'react';
+import { ProjectsContext } from '../../contexts/ProjectsContext';
+
 
 const ProjectPage = () => {
-  return <div></div>;
+  const { projectSelect,  setProjectSelect } = useContext(ProjectsContext);
+  console.log(projectSelect)
+  return(
+  <div></div>
+  )
 };
 
 export default ProjectPage;
