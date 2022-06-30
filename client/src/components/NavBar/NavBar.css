@@ -1,5 +1,5 @@
 .navbar-container {
-    display: grid;
-    justify-content: space-between;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    background-color: #0F2334;
 }
