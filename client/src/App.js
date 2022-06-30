@@ -1,5 +1,6 @@
 import "./App.css";
 import { useEffect } from "react";
+import ProjectPage from "./components/ProjectPage/ProjectPage";
 
 function App() {
   useEffect(() => {
@@ -11,7 +12,11 @@ function App() {
       }
     });
   }, []);
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <ProjectPage />
+    </div>
+  );
 }
 
 export default App;

@@ -1,10 +1,11 @@
+import "./ProjectPage.css";
 import React from "react";
 
 const ProjectPage = () => {
   return (
     <div>
       <h1>Project Page</h1>
-      <h2>Project Name</h2>
+      <h2>Project Name: Merege</h2>
       <p>Project Description</p>
       <h5>Project Languages</h5>
       <p>Project Collaborators</p>
