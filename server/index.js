@@ -6,7 +6,9 @@ const projectsRouter = require("./routes/projects");
 const authRouter = require("./routes/auth");
 
 connection.connect((err) => {
-  if (err) throw err;
+  if (err) {
+    throw err;
+  }
   console.log("Successfully connected to the database");
 });
 
