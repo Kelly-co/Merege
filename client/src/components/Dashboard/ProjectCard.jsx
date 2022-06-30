@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import ProgressBar from "@ramonak/react-progress-bar";
 
 function ProjectCard(props){
-    const { name, branch} = props;
+    const { name, branch,start_date,end_date} = props;
     console.log("na")
     return(
         <div className='card'>
