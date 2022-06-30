@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 import Multiselect from "multiselect-react-dropdown";
 import { staff } from "./Data";
 import backgroundImage from "../../assets/images/background.png";
@@ -7,13 +8,37 @@ import "./Form.css";
 import "../../App.css";
 
 const Form = () => {
+  const defaultValues = {
+    projectName: "",
+    subject: "",
+    keys: "",
+    description: "",
+    collaborators: [{ collaborator: "", city: "" }],
+    languages: [],
+    gitLabLink: "",
+    trelloLink: "",
+    startDate: "",
+    endDate: "",
+  };
+
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm();
+    setValue,
+  } = useForm({ defaultValues });
+  const [formData, setFormData] = useState(defaultValues);
   const onSubmit = (data) => console.log(data);
+
+  watch((data) => setFormData(data));
+
+  console.log("formData", formData);
+  const handleSubmission = () => {
+    axios.post("projects/insert", formData).then((response) => {
+      console.log(response);
+    });
+  };
 
   return (
     <div
@@ -59,22 +84,23 @@ const Form = () => {
         <Multiselect
           displayValue="collaborator"
           groupBy="city"
-          onKeyPressFn={function noRefCheck() {}}
-          onRemove={function noRefCheck() {}}
-          onSearch={function noRefCheck() {}}
-          onSelect={function noRefCheck() {}}
+          onRemove={(e) => setValue("collaborators", e)}
+          onSelect={(e) => {
+            setValue("collaborators", e);
+          }}
           options={staff}
           showCheckbox
+          {...register("collaborators", { required: true })}
         />
         <label className="form-titles">Languages:</label>
         <Multiselect
           isObject={false}
-          onKeyPressFn={function noRefCheck() {}}
-          onRemove={function noRefCheck() {}}
-          onSearch={function noRefCheck() {}}
-          onSelect={function noRefCheck() {}}
+          onRemove={(e) => setValue("languages", e)}
+          onSelect={(e) => setValue("languages", e)}
           options={["React.js", "JavaScript", "TypeScript", "Python"]}
+          {...register("languages", { required: true })}
         />
+
         <label className="form-titles">Description:</label>
         <input
           className="form-field-description"
@@ -89,12 +115,14 @@ const Form = () => {
             className="form-field-link"
             type="link"
             placeholder="https://"
+            {...register("gitLabLink", { required: true })}
           ></input>
           <label className="form-titles">Trello:</label>
           <input
             className="form-field-link"
             type="link"
             placeholder="https://"
+            {...register("trelloLink", { required: true })}
           ></input>
         </div>
         <div className="form-date">
@@ -103,16 +131,20 @@ const Form = () => {
             className="form-field"
             type="date"
             style={{ fontFamily: "Roboto, sans-serif", color: "grey" }}
+            {...register("startDate", { required: true })}
           />
           <label className="form-titles">End Date:</label>
           <input
             className="form-field"
             type="date"
             style={{ fontFamily: "Roboto, sans-serif", color: "grey" }}
+            {...register("endDate", { required: true })}
           />
         </div>
         <div className="btn-form-container">
-          <button className="btn-form">Submit</button>
+          <button className="btn-form" onClick={handleSubmission}>
+            Submit
+          </button>
         </div>
       </form>
     </div>
