@@ -1,14 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-// import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import Multiselect from "multiselect-react-dropdown";
+import { staff } from "./data";
 import "./Form.css";
-
-const staff = { Munich: ["Jan"], Aveiro: ["José"] };
-
-const defaultValues = {
-  branches: Object.keys(staff)[0],
-};
 
 const Form = () => {
   const {
@@ -16,22 +10,11 @@ const Form = () => {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm({ defaultValues });
+  } = useForm();
   const onSubmit = (data) => console.log(data);
 
-  const activeBranch = watch("branches");
-
-  const branches = Object.keys(staff).map((el) => (
-    <option value={el}>{el}</option>
-  ));
-
-  const collaborators = activeBranch
-    ? staff[activeBranch].map((el) => <option value={el}>{el}</option>)
-    : [];
-
-  console.log("collaborators", collaborators);
-  console.log("activeBranch", activeBranch);
-
+  console.log(watch("branches"));
+  console.log("staff", staff);
   return (
     /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -62,17 +45,36 @@ const Form = () => {
       />
       {errors.keys && <span>This field is required</span>}
       <br />
-      <select {...register("branches", { required: true })}>{branches}</select>
-      <select {...register("collaborators", { required: true })}>
-        {collaborators}
-      </select>
+      <label>Collaborators:</label>
+      <Multiselect
+        displayValue="collaborator"
+        groupBy="city"
+        onKeyPressFn={function noRefCheck() {}}
+        onRemove={function noRefCheck() {}}
+        onSearch={function noRefCheck() {}}
+        onSelect={function noRefCheck() {}}
+        options={staff}
+        showCheckbox
+      />
+      <br />
+      <label>Languages:</label>
+      <Multiselect
+        isObject={false}
+        onKeyPressFn={function noRefCheck() {}}
+        onRemove={function noRefCheck() {}}
+        onSearch={function noRefCheck() {}}
+        onSelect={function noRefCheck() {}}
+        options={["React.js", "JavaScript", "TypeScript", "Python"]}
+      />
+      <br />
       <label>Description:</label>
       <br />
       <input
         type="text"
         placeholder="Description"
-        {...register("description")}
+        {...register("description", { required: true })}
       />
+      {errors.keys && <span>This field is required</span>}
       <br />
       <label>Start Date:</label>
       <br />
