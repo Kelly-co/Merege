@@ -5,15 +5,17 @@ import ProjectList from "../components/Dashboard/ProjectList";
 import Homepage from "./Homepage/Homepage";
 import Form from "../components/Form/Form";
 import ProjectPage from "./ProjectPage/ProjectPage";
+import Login from "../components/Login/Login";
 
 function Main() {
   return (
     <div className="main">
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<Login />} />
         <Route path="/form" element={<Form />} />
         <Route path="/" element={<Layout />}>
-          <Route path="/project" element={<ProjectList />} />
+          <Route path="/dashboard" element={<ProjectList />} />
           <Route path="/project-page" element={<ProjectPage />} />
         </Route>
       </Routes>

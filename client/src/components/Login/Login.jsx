@@ -2,7 +2,8 @@ import React from "react";
 import { useState, useContext } from "react";
 import axios from "axios";
 //import { useNavigate } from "react-router-dom";
-import ProjectsContext from "../../contexts/ProjectsContext.js";
+import { ProjectsContext } from "../../contexts/ProjectsContext";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [userLogin, setUserLogin] = useState({
@@ -10,10 +11,9 @@ const Login = () => {
     password: "",
   });
 
-  const user = useContext(ProjectsContext);
-  const auth = useContext(ProjectsContext);
-  const setUser = useContext(ProjectsContext);
-  const setAuth = useContext(ProjectsContext);
+  const { setUser, setAuth } = useContext(ProjectsContext);
+
+  const navigate = useNavigate();
 
   let handleChange = (e) => {
     e.preventDefault();
@@ -28,9 +28,9 @@ const Login = () => {
     axios.post("/auth/login", userLogin).then((response) => {
       setUser(response.data);
       setAuth(true);
+      navigate("/dashboard");
     });
   };
-  console.log(user, auth);
 
   return (
     <div className="login container">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-export const ProjectsContext = React.createContext(null);
+export const ProjectsContext = React.createContext();
 
 export default function ProjectsContextProvider(props) {
   const [projects, setProjects] = React.useState();
