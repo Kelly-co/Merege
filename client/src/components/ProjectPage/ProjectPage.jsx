@@ -1,3 +1,4 @@
+import "./ProjectPage.css";
 import React from "react";
 
 const ProjectPage = () => {
