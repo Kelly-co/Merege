@@ -113,9 +113,9 @@ CREATE TABLE `projects` (
  VALUES
    (
      1,
-    'merege',
+    'Merege',
      'all projects in one database',
-     'lisbon',
+     'Nice',
      'github',
      'gitlab',
      'bitbucket',
@@ -134,9 +134,9 @@ CREATE TABLE `projects` (
  VALUES
    (
      2,
-    'apside',
+    'Apside',
      'improve co-working',
-     'berlin',
+     'Bordeaux',
      'work',
      'life-style',
      'projects',
@@ -155,9 +155,9 @@ CREATE TABLE `projects` (
  VALUES
    (
      3,
-    'wild code School',
+    'Wild Code School',
      'bootcamp project',
-     'paris',
+     'Aveiro',
      'teaching',
      'life-style',
      'students',
@@ -177,9 +177,9 @@ CREATE TABLE `projects` (
  VALUES
    (
      4,
-    'sport',
+    'Sport',
      'sport activities',
-     'lisbon',
+     'Paris',
      'sport activities',
      'life-style',
      'people',
