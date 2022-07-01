@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Multiselect from "multiselect-react-dropdown";
 import { staff } from "./Data";
@@ -21,6 +22,8 @@ const Form = () => {
     endDate: "",
   };
 
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -38,6 +41,7 @@ const Form = () => {
     axios.post("projects/insert", formData).then((response) => {
       console.log(response);
     });
+    navigate("/dashboard");
   };
 
   return (
