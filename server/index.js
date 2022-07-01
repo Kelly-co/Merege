@@ -3,6 +3,8 @@ const app = express();
 const connection = require("./config");
 const port = process.env.PORT;
 const projectsRouter = require("./routes/projects");
+const usersRouter = require("./routes/users");
+const projectsUsersRouter = require("./routes/projectUser");
 const authRouter = require("./routes/auth");
 
 connection.connect((err) => {
@@ -16,6 +18,8 @@ app.use(express.json());
 
 app.use("/auth", authRouter);
 app.use(projectsRouter);
+app.use(usersRouter);
+app.use(projectsUsersRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

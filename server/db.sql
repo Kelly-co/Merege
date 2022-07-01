@@ -1,6 +1,9 @@
 DROP DATABASE IF EXISTS `merege`;
 create database `merege`;
 use `merege`;
+DROP TABLE IF EXISTS `projects`;
+DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `projects_users`;
 
 CREATE TABLE `users` (
     `id` INT NOT NULL AUTO_INCREMENT,
@@ -88,7 +91,7 @@ CREATE TABLE `users` (
 
 CREATE TABLE `projects` (
     `id` INT NOT NULL AUTO_INCREMENT,
-    `name` VARCHAR(40) NOT NULL,
+    `projectName` VARCHAR(40) NOT NULL,
     `subject` VARCHAR(80) NOT NULL,
     `branch` VARCHAR(40) NOT NULL,
     `key1` VARCHAR(40) NOT NULL,

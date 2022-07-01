@@ -23,4 +23,15 @@ projectsRouter.post("/projects/insert", (req, res) => {
     });
 });
 
+projectsRouter.post("/projects/assign", (req, res) => {
+  Project.assignProject(req.body)
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error saving project to database");
+    });
+});
+
 module.exports = projectsRouter;

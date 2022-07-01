@@ -1,7 +1,7 @@
 export const staff = [
   {
-    collaborator: "Lorena",
-    city: "Nice",
+    collaborator: "Tiago",
+    city: "Munich",
   },
   {
     collaborator: "Oliver",

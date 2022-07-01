@@ -13,4 +13,11 @@ const createProject = (data) => {
   });
 };
 
-module.exports = { findAllProjects, createProject };
+const assignProject = (data) => {
+  return db.query("INSERT INTO projects_users SET ?", data).then(([result]) => {
+    const id = result.insertId;
+    return { ...data, id };
+  });
+};
+
+module.exports = { findAllProjects, createProject, assignProject };

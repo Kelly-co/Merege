@@ -1,85 +1,97 @@
-.card{
-    display:grid;
-    grid-template-columns: 3fr 1fr 2fr;
-    align-items: center;
-    gap: 15px;
-    color:#E7F4F2;
-    
+.card {
+  display: grid;
+  grid-template-columns: 3fr 1fr 2fr;
+  align-items: center;
+  gap: 15px;
+  color: #e7f4f2;
 }
-.cardComponent{
-  display:grid;
+.cardComponent {
+  display: grid;
   grid-template-columns: 3fr minmax(100px, 1fr) 2fr;
   align-items: center;
   padding-bottom: 10px;
   height: 80px;
 }
-.projectName{
-    background-color: #E7F4F2;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    padding: 0 0 0 10px;
+.projectName {
+  background-color: #e7f4f2;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 10px;
 }
 
-.select-css{
-    background-color: transparent;
-    color:#E7F4F2;
+.select-css {
+  background-color: transparent;
+  color: #e7f4f2;
 }
-.select-css option{
-  color:black
+.select-css option {
+  color: black;
 }
-.projectName h2{
-    font-weight: normal;
- 
+.projectName h2 {
+  font-weight: normal;
 }
-.branch{
-    background-color: #505C4D;
-    text-align: center;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color:#E7F4F2;
+.branch {
+  background-color: #505c4d;
+  text-align: center;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e7f4f2;
 }
 
 .progress {
-  background-color: #E7F4F2;
+  background-color: #e7f4f2;
   height: 100%;
   padding: 30px 10px 0 10px;
 }
 
-
-
 .progress .label {
-  gap:15px;
+  gap: 15px;
   color: green;
-  justify-content: start
+  justify-content: start;
 }
-.progress span{
-    margin-right: -10px;
-    display:none !important;
-    margin: 0 10px 0 10px;
+.progress span {
+  margin-right: -10px;
+  display: none !important;
+  margin: 0 10px 0 10px;
 }
 
-.dashboard{
-    gap:10px;
-    display:flex;
-    flex-direction: column;
-    width: 70vw;
-    align-items: center;
-    padding-top: 15px;
-    height: 100vw;
+.dashboard {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  align-items: center;
+  padding-top: 15px;
+  height: 100vw;
 }
 
 .cardComponent:hover {
-    transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-  }
+  transform: scale(
+    1.05
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
 
-.search input{
-    background: #E7F4F2;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 43.5px;
-    height: 50px;
-    width:200px;
-    text-align: center;
+.search input {
+  background: #e7f4f2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 43.5px;
+  height: 50px;
+  width: 200px;
+  text-align: center;
+}
+
+.button {
+  background-color: white; /* Green */
+  border: none;
+  color: blue;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 100%;
 }
