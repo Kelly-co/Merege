@@ -1,0 +1,11 @@
+.show-hide-password{
+    display:flex
+}
+
+.password-eye-btn{
+align-self: center;}
+
+.error-box{
+    text-align: center;
+    color:red;
+}
