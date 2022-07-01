@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { ProjectsContext } from "../../contexts/ProjectsContext";
@@ -12,6 +13,8 @@ const Form = () => {
   const { user, projects, users } = useContext(ProjectsContext);
 
   console.log(users);
+
+  const navigate = useNavigate();
 
   const defaultValues = {
     projectName: "",
@@ -80,6 +83,7 @@ const Form = () => {
         console.log(response);
       });
     });
+    navigate("/dashboard");
   };
 
   return (
