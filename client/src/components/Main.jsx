@@ -14,7 +14,7 @@ function Main() {
           <Route path="/form" element={<Form />} />
           <Route path="/" element={<Layout />}>
           <Route path="/dashboard" element={<ProjectList />} />
-          <Route path="/project-page" element={<ProjectPage />} />
+          <Route path="/projects/:projectName" element={<ProjectPage />} />
         </Route>
       </Routes>
     </div>

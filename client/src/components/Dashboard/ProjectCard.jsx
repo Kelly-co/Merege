@@ -3,7 +3,7 @@ import ProgressBar from "@ramonak/react-progress-bar";
 import "./Project.css";
 import ProjectPage from "../ProjectPage/ProjectPage"
 import { ProjectsContext } from '../../contexts/ProjectsContext';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function ProjectCard(props){
     const { name, branch,start_date,end_date} = props;
@@ -48,25 +48,27 @@ function ProjectCard(props){
 
     function selectProject () {
       setProjectSelect(props)
-      navigate('/project-page')
+      navigate('/projects/'+name)
       
     }
-  
+   
 
 
     return(
         <div className='card'onClick={selectProject}>
-          <div className='projectName'>
-            <h2>{name}</h2>
-          </div>
-          <div className='branch'>
-            <h2>{branch}</h2>
-          </div>
-          <div className='progress'>
-            <div>
-              <ProgressBar completed={progress}/>
+          <Link to={`/projects/${name}`}>
+            <div className='projectName'>
+              <h2>{name}</h2>
             </div>
-          </div>
+            <div className='branch'>
+              <h2>{branch}</h2>
+            </div>
+            <div className='progress'>
+              <div>
+                <ProgressBar completed={progress}/>
+              </div>
+            </div>
+          </Link>
         </div>
     )
 }
