@@ -12,12 +12,13 @@ import { useParams, Link } from 'react-router-dom';
 
 
 const ProjectPage = () => {
-  const { projects } = useContext(ProjectsContext);
-  let params = useParams();
+  
+  const { projectSelect, setProjectSelect} = useContext(ProjectsContext);
+  let project = projectSelect;
  
 
   
-  let project = projects.find(project => project.name === params.projectName)
+ // let project = projects.find(project => project.name === params.projectName)
   console.log(project)
    
 

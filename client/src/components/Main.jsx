@@ -13,7 +13,7 @@ function Main() {
         <Route path="/" element={<Homepage />} />
         <Route path="/form" element={<Form />} />
         <Route path="/" element={<Layout />}>
-        <Route path="/projects/:projectName" element={<ProjectPage />} />
+        <Route path="/projects" element={<ProjectPage />} />
           <Route path="/dashboard" element={<ProjectList />} />
         </Route>
       </Routes>

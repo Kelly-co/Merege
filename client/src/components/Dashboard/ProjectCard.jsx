@@ -48,7 +48,7 @@ function ProjectCard(props){
 
     function selectProject () {
       setProjectSelect(props)
-      navigate('/projects/'+name)
+      navigate(`/projects`)
       
     }
   
