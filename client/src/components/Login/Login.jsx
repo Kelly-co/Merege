@@ -4,6 +4,8 @@ import axios from "axios";
 //import { useNavigate } from "react-router-dom";
 import { ProjectsContext } from "../../contexts/ProjectsContext";
 import { useNavigate } from "react-router-dom";
+import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
+import "./Login.css";
 
 const Login = () => {
   const [userLogin, setUserLogin] = useState({
@@ -12,11 +14,18 @@ const Login = () => {
   });
 
   const { setUser, setAuth } = useContext(ProjectsContext);
+  const [showPassword, setShowPassword] = useState(false)
+  const [displayErrorsEmail, setDisplayErrorsEmail] = useState([])
+  const [displayErrorsPassword, setDisplayErrorsPassword] = useState([])
+  const [showErrorEmail, setShowErrorEmail] = useState(false)
+  const [showErrorPassword, setShowErrorPassword] = useState(false)
 
   const navigate = useNavigate();
 
   let handleChange = (e) => {
     e.preventDefault();
+    setShowErrorEmail(false)
+    setShowErrorPassword(false)
     const value = e.target.value;
     const name = e.target.name;
     setUserLogin({ ...userLogin, [name]: value });
@@ -29,8 +38,21 @@ const Login = () => {
       setUser(response.data);
       setAuth(true);
       navigate("/dashboard");
-    });
+    }).catch((error) => {
+      if (error.response.status === 401) {
+          setDisplayErrorsEmail("! Email was not found")
+          setShowErrorEmail(true)
+      }
+      else if (error.response.status === 403) {
+          setDisplayErrorsPassword("! Your password is invalid. Please try again.")
+          setShowErrorPassword(true)
+      }
+  });
   };
+
+  let toggleShow = (e) => {
+    setShowPassword(!showPassword)
+}
 
   return (
     <div className="login container">
@@ -54,16 +76,26 @@ const Login = () => {
                 className="login-input"
                 name="password"
                 id="password"
+                type={showPassword ? "text" : "password"}
                 value={userLogin.password}
                 placeholder="Password"
                 onChange={handleChange}
               />
+              <div onClick={toggleShow} className='password-eye-btn'>{showPassword ? <FaRegEyeSlash /> : <FaRegEye />}</div>
             </div>
             <button className="btn-login" type="submit">
               Login
             </button>
           </div>
         </form>
+        <div className='error-box'>
+            <p style={{ display: showErrorEmail ? 'block' : 'none' }}>
+                {displayErrorsEmail}
+            </p>
+            <p style={{ display: showErrorPassword ? 'block' : 'none' }}>
+                {displayErrorsPassword}
+            </p>
+          </div>
       </div>
 
       {/* <div className="btn-password-registration"></div> */}
