@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { ProjectsContext } from "../../contexts/ProjectsContext";
 import Multiselect from "multiselect-react-dropdown";
-import { staff } from "./Data";
 import backgroundImage from "../../assets/images/background.png";
 import "./Form.css";
 import "../../App.css";

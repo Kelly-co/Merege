@@ -39,7 +39,7 @@ export default function ProjectsContextProvider(props) {
       .catch((error) => {
         console.log(error);
       });
-  };
+  };console.log(users)
 
   const getProjectUser = async () => {
     axios
